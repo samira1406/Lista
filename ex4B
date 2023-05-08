@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<int> matriculas = new List<int>();
+
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine($"Digite a matrícula do {i}º aluno: ");
+            int matricula = int.Parse(Console.ReadLine());
+            matriculas.Add(matricula);
+        }
+
+        Console.WriteLine("Matrículas digitadas:");
+        foreach (int matricula in matriculas)
+        {
+            Console.WriteLine(matricula);
+        }
+
+        Console.WriteLine("Digite uma matrícula para verificar se está presente na lista: ");
+        int matriculaVerificar = int.Parse(Console.ReadLine());
+        VerificarMatricula(matriculaVerificar, matriculas);
+
+        Console.ReadKey();
+    }
+
+    static void VerificarMatricula(int matricula, List<int> matriculas)
+    {
+        if (matriculas.Contains(matricula))
+        {
+            Console.WriteLine($"A matrícula {matricula} está presente na lista.");
+        }
+        else
+        {
+            Console.WriteLine($"A matrícula {matricula} não está presente na lista.");
+        }
+    }
+}
