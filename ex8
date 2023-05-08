@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<string> convidados = new List<string>();
+
+        while (true)
+        {
+            Console.WriteLine("\nDigite 'cadastrar' para adicionar um convidado");
+            Console.WriteLine("Digite 'remover' para remover um convidado");
+            Console.WriteLine("Digite 'exibir' para mostrar todos os convidados");
+            Console.WriteLine("Digite 'sair' para encerrar o programa");
+
+            string opcao = Console.ReadLine().ToLower();
+
+            if (opcao == "cadastrar")
+            {
+                Console.Write("Digite o nome do convidado: ");
+                string nome = Console.ReadLine();
+                convidados.Add(nome);
+                Console.WriteLine($"O convidado {nome} foi adicionado.");
+            }
+            else if (opcao == "remover")
+            {
+                Console.Write("Digite o nome do convidado a ser removido: ");
+                string nome = Console.ReadLine();
+                bool removido = convidados.Remove(nome);
+
+                if (removido)
+                {
+                    Console.WriteLine($"O convidado {nome} foi removido.");
+                }
+                else
+                {
+                    Console.WriteLine($"O convidado {nome} não foi encontrado.");
+                }
+            }
+            else if (opcao == "exibir")
+            {
+                Console.WriteLine("\nLista de convidados:");
+                foreach (string nome in convidados)
+                {
+                    Console.WriteLine(nome);
+                }
+            }
+            else if (opcao == "sair")
+            {
+                Console.WriteLine("Encerrando o programa.");
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Opção inválida. Tente novamente.");
+            }
+        }
+    }
+}
+
