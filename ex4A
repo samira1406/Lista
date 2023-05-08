@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<int> matriculas = new List<int>();
+
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine($"Digite a matrícula do {i}º aluno: ");
+            int matricula = int.Parse(Console.ReadLine());
+            matriculas.Add(matricula);
+        }
+
+        Console.WriteLine("Matrículas digitadas:");
+        foreach (int matricula in matriculas)
+        {
+            Console.WriteLine(matricula);
+        }
+
+        Console.ReadKey();
+    }
+}
