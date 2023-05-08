@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<double> notasProva1 = new List<double>();
+        List<double> notasProva2 = new List<double>();
+        List<double> medias = new List<double>();
+
+        double nota1 = 0, nota2 = 0;
+        while (nota1 != -1)
+        {
+            Console.WriteLine("Digite a nota da primeira prova (-1 para sair): ");
+            nota1 = double.Parse(Console.ReadLine());
+            if (nota1 == -1)
+            {
+                break;
+            }
+            Console.WriteLine("Digite a nota da segunda prova: ");
+            nota2 = double.Parse(Console.ReadLine());
+            notasProva1.Add(nota1);
+            notasProva2.Add(nota2);
+            medias.Add((nota1 + nota2) / 2);
+        }
+
+        Console.WriteLine("Notas da primeira prova:");
+        foreach (double nota in notasProva1)
+        {
+            Console.WriteLine(nota);
+        }
+
+        Console.WriteLine("Notas da segunda prova:");
+        foreach (double nota in notasProva2)
+        {
+            Console.WriteLine(nota);
+        }
+
+        Console.WriteLine("Médias:");
+        foreach (double media in medias)
+        {
+            Console.WriteLine(media);
+            if (media >= 6)
+            {
+                Console.WriteLine("APROVADO");
+            }
+            else
+            {
+                Console.WriteLine("REPROVADO");
+            }
+        }
+
+        Console.ReadKey();
+    }
+}
