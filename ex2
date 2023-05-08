@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        List<int> matriculas = new List<int>();
+        int contador = 0;
+
+        while (contador < 10)
+        {
+            Console.Write($"Digite a matrícula do {contador + 1}º aluno: ");
+            int matricula = int.Parse(Console.ReadLine());
+
+            if (!matriculas.Contains(matricula))
+            {
+                matriculas.Add(matricula);
+                contador++;
+            }
+            else
+            {
+                Console.WriteLine("Matrícula já inserida. Digite outra matrícula.");
+            }
+        }
+
+        Console.WriteLine("\nMatrículas dos alunos:");
+
+        foreach (int matricula in matriculas)
+        {
+            Console.WriteLine(matricula);
+        }
+    }
+}
