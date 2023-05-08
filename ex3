@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+
+class Program {
+    static void Main(string[] args) {
+        List<int> numeros = new List<int>();
+        
+        int numero = 0;
+        
+        while (numero != 999) {
+            Console.WriteLine("Digite um número inteiro (999 para encerrar): ");
+            numero = int.Parse(Console.ReadLine());
+            
+            if (numero != 999) {
+                numeros.Add(numero);
+            }
+        }
+        
+        numeros.Reverse();
+        
+        Console.WriteLine("Números digitados (em ordem inversa): ");
+        foreach (int num in numeros) {
+            Console.Write(num + " ");
+        }
+        
+        Console.ReadKey();
+    }
+}
